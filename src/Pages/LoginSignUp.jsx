@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './CSS/LoginSignUp.css'
-// import logo_icon from '../Components/Assets/logo_icon1.png'
 function LoginSignUp() {
   const [state, setState] = useState("Login")
   const [formData,setFormData] = useState({
@@ -14,7 +13,7 @@ function LoginSignUp() {
   const login = async()=>{
     console.log("Loing Function Excuted",formData);
     let responseData;
-    await fetch(`https://e-backend-gamma.vercel.app/login`,{
+    await fetch(`https://e-commerce-backend-am43.vercel.app/login`,{
       method:"POST",
       headers:{
         Accept:'application/form-data',
@@ -35,7 +34,7 @@ function LoginSignUp() {
   const signup = async()=>{
     console.log("Signup Function Excuted")
     let responseData;
-    await fetch(`https://e-backend-gamma.vercel.app/signup`,{
+    await fetch(`https://e-commerce-backend-am43.vercel.app/signup`,{
       method:"POST",
       headers:{
         Accept:'application/form-data',
@@ -55,9 +54,6 @@ function LoginSignUp() {
   return (
     <div className='login_signup'>
       <div className='backg'>
-        {/* <div className='logo_signup'>
-          <img src={logo_icon} alt="" />
-        </div> */}
         <div className='block'>
           <div className="head">
             <h1>{state}</h1>

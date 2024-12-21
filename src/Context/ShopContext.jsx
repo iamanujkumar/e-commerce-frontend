@@ -13,12 +13,12 @@
 //     const [all_product, setAll_Product] = useState([])
 //     const [cartItems, setCartItems] = useState(getDefaultCart())
 //     useEffect(() => {
-//         fetch(`https://e-backend-gamma.vercel.app/allproducts`)
+//         fetch(`https://e-commerce-backend-am43.vercel.app/allproducts`)
 //             .then((response) => response.json())
 //             .then((data) => setAll_Product(data))
 //             .catch((error) => console.error('Error fetching products:', error));
 //             if(localStorage.getItem('auth-token')){
-//                 fetch(`https://e-backend-gamma.vercel.app/getcart`, {
+//                 fetch(`https://e-commerce-backend-am43.vercel.app/getcart`, {
 //                     method: 'POST',
 //                     headers: {
 //                         Accept: 'application/form-data',
@@ -35,7 +35,7 @@
 //     const addToCart = (itemId) => {
 //         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
 //         if (localStorage.getItem('auth-token')) {
-//             fetch(`https://e-backend-gamma.vercel.app/addtocart`, {
+//             fetch(`https://e-commerce-backend-am43.vercel.app/addtocart`, {
 //                 method: 'POST',
 //                 headers: {
 //                     'Accept': 'application/json', // Corrected header
@@ -55,7 +55,7 @@
 //     const removeFromCart = (itemId) => {
 //         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
 //         if(localStorage.getItem('auth-token')){
-//             fetch(`https://e-backend-gamma.vercel.app/removefromcart`, {
+//             fetch(`https://e-commerce-backend-am43.vercel.app/removefromcart`, {
 //                 method: 'POST',
 //                 headers: {
 //                     'Accept': 'application/json', // Corrected header
@@ -126,13 +126,13 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
     useEffect(() => {
-        fetch(`https://e-backend-gamma.vercel.app/allproducts`)
+        fetch(`https://e-commerce-backend-am43.vercel.app/allproducts`)
             .then((response) => response.json())
             .then((data) => setAll_Product(data))
             .catch((error) => console.error('Error fetching products:', error));
         
         if (localStorage.getItem('auth-token')) {
-            fetch(`https://e-backend-gamma.vercel.app/getcart`, {
+            fetch(`https://e-commerce-backend-am43.vercel.app/getcart`, {
                 method: 'POST',
                 headers: {
                     'auth-token': `${localStorage.getItem('auth-token')}`,
@@ -147,7 +147,7 @@ const ShopContextProvider = (props) => {
     const addToCart = (itemId) => {
         if (localStorage.getItem('auth-token')) {
             setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-            fetch(`https://e-backend-gamma.vercel.app/addtocart`, {
+            fetch(`https://e-commerce-backend-am43.vercel.app/addtocart`, {
                 method: 'POST',
                 headers: {
                     'auth-token': localStorage.getItem('auth-token'),
@@ -159,7 +159,7 @@ const ShopContextProvider = (props) => {
             .then((data) => console.log(data))
             .catch((error) => console.error('Error adding to cart:', error));
         } else {
-            window.location.replace(`https://f-ecommerce-nu.vercel.app/login`);
+            window.location.replace(`https://e-commerce-frontend-bice-nine.vercel.app//login`);
         
         }
     }
@@ -167,7 +167,7 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) => {
         if (localStorage.getItem('auth-token')) {
             setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
-            fetch(`https://e-backend-gamma.vercel.app/removefromcart`, {
+            fetch(`https://e-commerce-backend-am43.vercel.app/removefromcart`, {
                 method: 'POST',
                 headers: {
                     'auth-token': localStorage.getItem('auth-token'),

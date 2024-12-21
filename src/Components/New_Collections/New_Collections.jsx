@@ -7,7 +7,7 @@ function New_Collections() {
   const [new_collection, setNew_collection] = useState([]);
 
   useEffect(() => {
-      fetch(`https://e-backend-gamma.vercel.app/newcollections`)
+      fetch(`https://e-commerce-backend-am43.vercel.app/newcollections`)
           .then((response) => response.json())
           .then((data) => setNew_collection(data))
           .catch((error) => console.error('Error fetching new collections:', error));

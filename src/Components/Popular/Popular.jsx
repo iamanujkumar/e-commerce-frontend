@@ -5,7 +5,7 @@ function Popular() {
 
   const [popularProduct ,setPopularProduct] = useState([]);
   useEffect(() => {
-    fetch(`https://e-backend-gamma.vercel.app/popularinwomen`)
+    fetch(`https://e-commerce-backend-am43.vercel.app/popularinwomen`)
         .then((response) => response.json())
         .then((data) => setPopularProduct(data))
         .catch((error) => console.error('Error fetching popular products for women:', error));
